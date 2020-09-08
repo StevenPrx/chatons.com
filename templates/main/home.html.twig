@@ -1,0 +1,17 @@
+{% extends 'layout.html.twig' %}
+{% block main %}
+    <div class="card-columns">
+        {% for cat in cats %}
+            <div class="card">
+                <img class="card-img-top" src="{{ asset(cat.getFilename()) }}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ cat.getName() }}</h5>
+                    <p class="card-text">{{ cat.getDescription }}</p>
+                    <a href="cat/{{ cat.getId() }}" class="btn btn-primary">Voir plus</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block title %}{{ parent() }} | Home{% endblock %}

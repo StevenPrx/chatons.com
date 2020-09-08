@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <title>{% block title %}Chatons{% endblock %}</title>
+</head>
+<body>
+<div class="container container-body">
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-cat"></i>
+                Chatons.com
+            </a>
+            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ path("home") }}"
+                                            title="Bucket-List | Home">Home</a></li>
+                </ul>
+            </div>
+            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#" title="Bucket-List | About Us">Page 4</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" title="Bucket-List | Ideas">Page 5</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container container-cards">
+            {% block main %}{% endblock %}
+        </div>
+    </main>
+    <footer>
+        &copy; {{ "now"|date("Y") }} Chatons.com
+    </footer>
+</div>
+</body>
+</html>

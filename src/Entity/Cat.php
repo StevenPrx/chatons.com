@@ -66,7 +66,7 @@ class Cat
 
     public function getFilename(): ?string
     {
-        return $this->filename;
+        return "img/".$this->filename;
     }
 
     public function setFilename(string $filename): self

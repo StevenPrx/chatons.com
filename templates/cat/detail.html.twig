@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+{% block main %}
+    <div class="row wrap">
+        <div class="col-sm-4">
+            <p><img src="{{ asset(cat.getFilename()) }}" class="img-detail"></p>
+            <p>A vendre au prix de <u>{{ cat.getPrice() }}€</u></p>
+            <a href="#" class="btn btn-primary mb-2 btn-custom">Ajouter au panier</a>
+        </div>
+        <div class="col-sm-6">
+            <p class="h1 name-detail">{{ cat.getName() }}</p>
+            <p>{{ cat.getDescription() }}</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block title %}{{ parent() }} | {{ cat.getName() }}{% endblock %}
